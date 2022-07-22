@@ -3,10 +3,12 @@ package main
 import (
 	"photorage-community/web/rest"
 
+	"photorage-community/adaptor"
+
 	"github.com/gin-gonic/gin"
 )
 
-const SERVER_PORT string = ":8080"
+const SERVER_PORT string = ":8880"
 
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
@@ -18,6 +20,9 @@ func SetupRouter() *gin.Engine {
 }
 
 func main() {
+	// 이것보다 더 좋은 방법은 없는가?
+	go adaptor.CommentDeleteConsumer()
+
 	r := SetupRouter()
 	r.Run(SERVER_PORT)
 }
