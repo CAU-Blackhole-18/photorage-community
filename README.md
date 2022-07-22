@@ -10,3 +10,13 @@ Photorage Community Module. In current, only comment function was designed.
 
 ## 사용 프레임워크
 - Gin
+
+## 적용 아키텍처
+- Hexagonal Architecture
+- But, 보일러플레이트가 너무 많기 때문에, 자연스럽게 내부로 흐르는 의존성에 대해서는 interface 생성하지 않았음
+
+## 사용 DB
+- DynamoDB
+
+## 적용 메시지 Queue
+- Kafka
