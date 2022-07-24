@@ -15,3 +15,7 @@ func GetAlbumComment(albumSeq int64) []dto.CommentDTO {
 	}
 	return commentDTOList
 }
+
+func DeleteAlbumComment(albumSeq int64) {
+
+}
