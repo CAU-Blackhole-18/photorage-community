@@ -14,7 +14,7 @@ func SetupRouter() *gin.Engine {
 	r := gin.Default()
 
 	rest.AddAlbumCommentRouter(r)
-	// TODO : 계속해서 controller가 추가되어가는 장소
+	// TODO : 계속해서 controller가 추가되어가는 장소 : 지금은 /album Group만 등록되어있음
 
 	return r
 }
