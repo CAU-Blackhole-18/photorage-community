@@ -5,8 +5,14 @@ import (
 	"photorage-community/web/dto"
 )
 
-func GetAlbumComment(albumSeq int64) []dto.CommentDTO {
-	commentList := repository.FindCommentList(albumSeq)
+type CommentService struct{}
+
+var (
+	commentRepo = repository.CommentRepository{}
+)
+
+func (commentService *CommentService) GetAlbumComment(albumSeq int64) []dto.CommentDTO {
+	commentList, _ := commentRepo.FindCommentList(albumSeq)
 
 	commentDTOList := make([]dto.CommentDTO, len(commentList))
 
