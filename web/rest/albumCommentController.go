@@ -3,12 +3,16 @@ package rest
 import (
 	"fmt"
 	"net/http"
+	"photorage-community/application/service"
 	"photorage-community/domain"
-	"photorage-community/service"
 	"photorage-community/web/dto"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+)
+
+var (
+	commentService = service.CommentService{}
 )
 
 func AddAlbumCommentRouter(router *gin.Engine) {
@@ -24,7 +28,7 @@ func AddAlbumCommentRouter(router *gin.Engine) {
 func GetAlbumComment(c *gin.Context) {
 	// int64로 변환
 	albumSeq, _ := strconv.ParseInt(c.Param("albumSeq"), 10, 64)
-	c.JSON(http.StatusOK, service.GetAlbumComment(albumSeq))
+	c.JSON(http.StatusOK, commentService.GetAlbumComment(albumSeq))
 }
 
 func CreateAlbumComment(c *gin.Context) {
