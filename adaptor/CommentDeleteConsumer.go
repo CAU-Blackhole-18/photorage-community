@@ -6,6 +6,7 @@ import (
 	"photorage-community/config"
 )
 
+// TODO : Kafka에 해당 Topic 생성 필요
 const COMMENT_DELETE_MESSAGE_TOPIC string = "comment-delete-event"
 
 func CommentDeleteConsumer() {
